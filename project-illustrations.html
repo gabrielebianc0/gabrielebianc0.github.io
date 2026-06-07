@@ -211,23 +211,32 @@
       margin-bottom: 8px;
     }
 
-    /* Immagine verticale — centrata, larghezza contenuta */
-    .proj-img-vertical-wrap {
-      display: flex;
-      justify-content: center;
+    /* Griglia mista: verticale sx + 2 orizzontali dx */
+    .proj-img-mixed {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 12px;
+      aspect-ratio: 3 / 2;
     }
-    .proj-img-vertical {
-      width: 40%;
-      max-width: 560px;
-      object-fit: contain;
+    .proj-img-mixed .proj-img-vertical {
+      grid-row: 1 / 3;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       display: block;
       border: 1px solid var(--border-green);
     }
-    @media (max-width: 768px) {
-      .proj-img-vertical { width: 70%; }
+    .proj-img-mixed .proj-img-half {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
-    @media (max-width: 480px) {
-      .proj-img-vertical { width: 100%; }
+    @media (max-width: 768px) {
+      .proj-img-mixed { grid-template-columns: 1fr; grid-template-rows: auto; }
+      .proj-img-mixed .proj-img-vertical { grid-row: auto; aspect-ratio: 9 / 16; height: auto; }
+      .proj-img-mixed .proj-img-half { aspect-ratio: 16 / 9; height: auto; }
     }
 
     /* ── Next Project ─────────────────────────────────────────── */
@@ -403,24 +412,20 @@
     <!-- GALLERY -->
     <div class="proj-gallery">
 
-      <!-- Mare Mosso — full width orizzontale -->
+      <!-- Ferrari — full width -->
+      <img class="proj-img-full" src="images/illustrations/Ferrari_400_Superamerica.png" alt="Ferrari 400 Superamerica" />
+
+      <!-- Airone — full width -->
+      <img class="proj-img-full" src="images/illustrations/Airone.jpg" alt="Airone" />
+
+      <!-- Mare Mosso — full width -->
       <img class="proj-img-full" src="images/illustrations/Mare_Mosso.jpg" alt="Mare Mosso" />
 
-      <!-- Ferrari + Airone — griglia 2 colonne -->
-      <div class="proj-img-grid">
-        <img class="proj-img-half" src="images/illustrations/Ferrari_400_Superamerica.png" alt="Ferrari 400 Superamerica" />
-        <img class="proj-img-half" src="images/illustrations/Airone.jpg" alt="Airone" />
-      </div>
-
-      <!-- Whatever happens, happens — full width orizzontale -->
-      <img class="proj-img-full" src="images/illustrations/Whatever_happens__happens.jpg" alt="Whatever happens, happens" />
-
-      <!-- cluster_12 — full width orizzontale -->
-      <img class="proj-img-full" src="images/illustrations/cluster_12.png" alt="Cluster 12" />
-
-      <!-- Kame House — verticale, centrata -->
-      <div class="proj-img-vertical-wrap">
+      <!-- Griglia mista: Kame House verticale sx + Whatever + Cluster dx -->
+      <div class="proj-img-mixed">
         <img class="proj-img-vertical" src="images/illustrations/Kame_House.jpg" alt="Kame House" />
+        <img class="proj-img-half" src="images/illustrations/Whatever_happens__happens.jpg" alt="Whatever happens, happens" />
+        <img class="proj-img-half" src="images/illustrations/cluster_12.png" alt="Cluster 12" />
       </div>
 
     </div><!-- /proj-gallery -->
