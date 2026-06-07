@@ -1,0 +1,137 @@
+<!-- ═══════════════════════════════════════════════════════════
+     WORK SECTION — incolla questo al posto di:
+     <section id="work" class="placeholder-section">— Work section —</section>
+     in index.html
+     ═══════════════════════════════════════════════════════════ -->
+
+    <!-- WORK -->
+    <section id="work">
+      <div class="work-inner">
+
+        <div class="work-heading reveal">
+          <span class="contact-num">// 001</span>
+          <h2 class="contact-title">Work</h2>
+        </div>
+
+        <!-- FILTER BADGES -->
+        <div class="work-filters reveal">
+          <button class="work-filter active" data-filter="all">All</button>
+          <button class="work-filter" data-filter="ui-hmi">UI / HMI</button>
+          <button class="work-filter" data-filter="3d-modeling">3D Modeling</button>
+          <button class="work-filter" data-filter="graphic-illustrations">Graphic &amp; Illustrations</button>
+        </div>
+
+        <!-- PROJECT GRID -->
+        <div class="work-grid reveal">
+
+          <!-- Card 1 -->
+          <a class="project-card" href="#" data-category="ui-hmi">
+            <div class="project-card-inner">
+              <div class="project-bracket"></div>
+              <span class="project-category">UI / HMI</span>
+              <h3 class="project-title">Project Title</h3>
+              <p class="project-desc">Automotive cluster &amp; infotainment HMI redesign for hypercar.</p>
+              <div class="project-tools">
+                <span class="project-tool">Photoshop</span>
+                <span class="project-tool">Blender</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 2 -->
+          <a class="project-card" href="#" data-category="ui-hmi">
+            <div class="project-card-inner">
+              <div class="project-bracket"></div>
+              <span class="project-category">UI / HMI</span>
+              <h3 class="project-title">Project Title</h3>
+              <p class="project-desc">Automotive cluster &amp; infotainment HMI redesign for hypercar.</p>
+              <div class="project-tools">
+                <span class="project-tool">Figma</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 3 -->
+          <a class="project-card" href="#" data-category="3d-modeling">
+            <div class="project-card-inner">
+              <div class="project-bracket"></div>
+              <span class="project-category">3D Modeling</span>
+              <h3 class="project-title">Project Title</h3>
+              <p class="project-desc">Automotive cluster &amp; infotainment HMI redesign for hypercar.</p>
+              <div class="project-tools">
+                <span class="project-tool">Blender</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 4 -->
+          <a class="project-card" href="#" data-category="graphic-illustrations">
+            <div class="project-card-inner">
+              <div class="project-bracket"></div>
+              <span class="project-category">Graphic &amp; Illustrations</span>
+              <h3 class="project-title">Project Title</h3>
+              <p class="project-desc">Automotive cluster &amp; infotainment HMI redesign for hypercar.</p>
+              <div class="project-tools">
+                <span class="project-tool">Illustrator</span>
+                <span class="project-tool">Photoshop</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 5 -->
+          <a class="project-card" href="#" data-category="graphic-illustrations">
+            <div class="project-card-inner">
+              <div class="project-bracket"></div>
+              <span class="project-category">Graphic &amp; Illustrations</span>
+              <h3 class="project-title">Project Title</h3>
+              <p class="project-desc">Automotive cluster &amp; infotainment HMI redesign for hypercar.</p>
+              <div class="project-tools">
+                <span class="project-tool">Illustrator</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 6 -->
+          <a class="project-card" href="#" data-category="3d-modeling">
+            <div class="project-card-inner">
+              <div class="project-bracket"></div>
+              <span class="project-category">3D Modeling</span>
+              <h3 class="project-title">Project Title</h3>
+              <p class="project-desc">Automotive cluster &amp; infotainment HMI redesign for hypercar.</p>
+              <div class="project-tools">
+                <span class="project-tool">Blender</span>
+                <span class="project-tool">Photoshop</span>
+              </div>
+            </div>
+          </a>
+
+        </div><!-- /work-grid -->
+      </div><!-- /work-inner -->
+    </section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     SCRIPT FILTRI — aggiungi questo nel <script> in fondo
+     a index.html, subito dopo setupBtn(...)
+     ═══════════════════════════════════════════════════════════ -->
+<!--
+    // ── Work filters ──────────────────────────────────────────
+    const filterBtns = document.querySelectorAll('.work-filter');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+        projectCards.forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+-->

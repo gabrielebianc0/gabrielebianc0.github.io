@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gabriele Bianco // Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- SCROLL INDICATOR -->
+  <div class="scroll-indicator" id="scrollIndicator">
+    <span class="scroll-indicator-label">Scroll</span>
+    <div class="scroll-indicator-line"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a href="index.html" class="nav-logo">Gabriele Bianco&nbsp;&nbsp;//&nbsp;&nbsp;Portfolio</a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html" class="active">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <main>
+
+    <!-- HERO -->
+    <section id="hero">
+      <div class="hero-inner">
+        <div class="hero-eyebrow">
+          <span class="eyebrow-line"></span>
+          <span class="eyebrow-text">Designer&nbsp;·&nbsp;Turin</span>
+        </div>
+        <h1 class="hero-name">
+          <span class="line1">Gabriele</span>
+          <span class="line2">Bianco</span>
+        </h1>
+        <p class="hero-bio">
+          UI / HMI Designer &amp; 3D Designer<br>
+          Transportation Design graduate · IAAD Turin<br>
+          Cross-disciplinary approach · Free time: draw, comics, anime &amp; long walks
+        </p>
+        <div class="hero-tags">
+          <span class="tag tag-ui">UI / HMI Design</span>
+          <span class="tag tag-blender">Design 3D</span>
+          <span class="tag tag-transport">Transportation Design</span>
+          <span class="tag tag-digital">Digital Illustration</span>
+        </div>
+        <div class="hero-cta">
+          <div class="btn-wrap">
+            <svg class="btn-svg-border" id="svgVW"     xmlns="http://www.w3.org/2000/svg"></svg>
+            <svg class="btn-svg-fill"   id="svgVWfill"  xmlns="http://www.w3.org/2000/svg"></svg>
+            <button class="btn btn-primary" id="btnVW"
+              onclick="document.getElementById('work').scrollIntoView({behavior:'smooth'})">
+              View Work
+            </button>
+          </div>
+          <div class="btn-wrap">
+            <svg class="btn-svg-border" id="svgGIT"     xmlns="http://www.w3.org/2000/svg"></svg>
+            <svg class="btn-svg-fill"   id="svgGITfill"  xmlns="http://www.w3.org/2000/svg"></svg>
+            <button class="btn btn-ghost" id="btnGIT"
+              onclick="document.getElementById('get-in-touch').scrollIntoView({behavior:'smooth'})">
+              Get in Touch
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <hr class="section-divider" />
+
+    <!-- SOFTWARE -->
+    <section id="software">
+      <div class="software-inner reveal">
+        <div class="software-heading">
+          <span class="contact-num">//</span>
+          <h2 class="contact-title">Software</h2>
+        </div>
+        <div class="software-grid">
+
+          <!-- Photoshop -->
+          <div class="sw-card">
+            <div class="sw-card-inner">
+              <svg class="sw-icon" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.18615 11.5206C7.48057 11.5206 9.44952 10.946 10.7747 9.66515C11.7976 8.66973 12.3609 7.21135 12.3609 5.48765C12.3609 3.76396 11.6223 2.30009 10.5189 1.4108C9.37262 0.468437 7.6594 0 5.26126 0C2.88457 0 1.19997 0.157365 0 0.364136V17.7402H3.85742V11.4419C4.21509 11.495 4.6729 11.5206 5.18615 11.5206ZM5.46513 3.00092C4.67469 3.00092 4.13819 3.0796 3.85921 3.16011V8.35865C4.19184 8.43551 4.59779 8.46112 5.15932 8.46112C7.22842 8.46112 8.50528 7.39068 8.50528 5.58646C8.50349 3.9689 7.40546 3.00092 5.46513 3.00092Z" fill="#5A6A7E"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12.5505 17.1125C13.4965 17.6377 14.9504 18 16.5885 18C20.158 18 22 16.2489 22 13.8682C21.9768 11.9908 20.9789 10.7612 18.604 9.9268C17.0714 9.37602 16.5903 9.06312 16.5903 8.46294C16.5903 7.80969 17.125 7.4181 18.0675 7.4181C19.1423 7.4181 20.2135 7.83347 20.775 8.1482L21.4635 5.40346C20.6981 5.01371 19.3962 4.67153 17.9405 4.67153C14.8503 4.67153 12.8581 6.4794 12.8581 8.85452C12.833 10.3696 13.8309 11.8079 16.4097 12.6953C17.8636 13.193 18.2463 13.5059 18.2463 14.1574C18.2463 14.8124 17.7599 15.2296 16.5885 15.2296C15.4368 15.2296 13.9543 14.7063 13.239 14.2653L12.5505 17.1125Z" fill="#5A6A7E"/>
+              </svg>
+              <span class="sw-label">Photoshop</span>
+            </div>
+          </div>
+
+          <!-- Illustrator -->
+          <div class="sw-card">
+            <div class="sw-card-inner">
+              <svg class="sw-icon" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.3091 13.5639L11.6543 18H15.8928L10.4897 0.716915H5.32399L0 18H4.08227L5.32399 13.5639H10.3091ZM7.777 3.63669H7.72628C7.62534 4.03977 7.5244 4.48548 7.42176 4.93873C7.26236 5.64255 7.09886 6.36455 6.92484 6.9733L5.89007 10.6401H9.74104L8.65554 6.9733C8.39855 6.11753 8.14015 5.08558 7.91086 4.16991C7.865 3.98674 7.82029 3.80822 7.777 3.63669Z" fill="#5A6A7E"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.9401 18H21.8702V5.46101H17.9401V18Z" fill="#5A6A7E"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.8386 1.97135C17.8143 3.04865 18.6421 3.92257 19.8818 3.92257C21.1742 3.92257 22 3.04865 22 1.97135C21.9757 0.843716 21.1742 0 19.9102 0C18.6421 0 17.8143 0.841702 17.8386 1.97135Z" fill="#5A6A7E"/>
+              </svg>
+              <span class="sw-label">Illustrator</span>
+            </div>
+          </div>
+
+          <!-- InDesign -->
+          <div class="sw-card">
+            <div class="sw-card-inner">
+              <svg class="sw-icon" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 21.6566H4.63298V1.0929H0V21.6566Z" fill="#5A6A7E"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.7077 19.4677L17.9095 21.6566H22C21.948 20.6585 21.8784 18.8792 21.8784 17.198V0H17.2731V8.08418H17.2175C16.5529 7.04739 15.1269 6.40282 13.3043 6.40282C9.75985 6.40282 6.63285 9.30304 6.67466 14.3399C6.67466 18.9773 9.48505 22 13.005 22C14.9076 22 16.7026 21.1384 17.6382 19.4677H17.7077ZM14.5147 9.94752C12.4208 9.94752 11.3355 11.8354 11.3355 14.1892C11.3355 16.718 12.5704 18.3047 14.4868 18.3047C15.8191 18.3047 16.8799 17.3906 17.1512 16.0771C17.2453 15.7479 17.2731 15.4045 17.2731 15.0088V13.0649C17.2731 12.8197 17.2453 12.4763 17.2035 12.2312C16.9321 10.9878 15.9409 9.94752 14.5147 9.94752Z" fill="#5A6A7E"/>
+              </svg>
+              <span class="sw-label">InDesign</span>
+            </div>
+          </div>
+
+          <!-- Figma -->
+          <div class="sw-card">
+            <div class="sw-card-inner">
+              <svg class="sw-icon" viewBox="0 0 19 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.5 14.5C9.5 11.8307 11.6267 9.66667 14.25 9.66667C16.8733 9.66667 19 11.8307 19 14.5C19 17.1693 16.8733 19.3333 14.25 19.3333C11.6267 19.3333 9.5 17.1693 9.5 14.5Z" fill="#5A6A7E"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 24.1667C0 21.4973 2.12665 19.3333 4.75 19.3333H9.5V24.1667C9.5 26.836 7.37331 29 4.75 29C2.12665 29 0 26.836 0 24.1667Z" fill="#5A6A7E"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.5 0V9.66667H14.25C16.8733 9.66667 19 7.50266 19 4.83333C19 2.16396 16.8733 0 14.25 0H9.5Z" fill="#444F5E"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 4.83333C0 7.50266 2.12665 9.66667 4.75 9.66667H9.5V0H4.75C2.12665 0 0 2.16396 0 4.83333Z" fill="#5A6A7E"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 14.5C0 17.1693 2.12665 19.3333 4.75 19.3333H9.5V9.66667H4.75C2.12665 9.66667 0 11.8307 0 14.5Z" fill="#444F5E"/>
+              </svg>
+              <span class="sw-label">Figma</span>
+            </div>
+          </div>
+
+          <!-- Blender -->
+          <div class="sw-card">
+            <div class="sw-card-inner">
+              <svg class="sw-icon" viewBox="0 0 27 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M26.9208 12.251C26.7624 11.1347 26.3764 10.076 25.773 9.10475C25.2467 8.2571 24.5715 7.50322 23.7656 6.86248L23.7678 6.86047L15.3035 0.349873C15.2965 0.343735 15.2892 0.33802 15.2844 0.334687C15.0029 0.118794 14.6219 0 14.2119 0C13.8014 0 13.4055 0.119059 13.0977 0.335322C12.7668 0.566824 12.5776 0.873995 12.5644 1.20101C12.5523 1.50601 12.6976 1.79953 12.9746 2.02839C13.5194 2.4588 14.063 2.89868 14.6072 3.33898C15.1354 3.76653 15.6797 4.20684 16.2213 4.6355L5.85394 4.62847C4.66833 4.62847 3.86102 5.18603 3.69495 6.1195C3.62199 6.52837 3.75075 6.97794 4.03861 7.32226C4.34401 7.68731 4.78742 7.88866 5.2871 7.88866L6.07745 7.88913C7.16928 7.88913 8.26592 7.88649 9.36108 7.88384L10.4055 7.88141L0.996232 14.8528L0.958876 14.8801C0.433303 15.2837 0.0892255 15.8492 0.014989 16.4319C-0.0412828 16.8733 0.0615387 17.2767 0.312464 17.5988C0.611523 17.9828 1.07845 18.194 1.62732 18.194C2.16653 18.194 2.71672 17.9894 3.17725 17.6168L8.25842 13.4524C8.2367 13.6558 8.21033 13.9541 8.21335 14.1707C8.21905 14.5135 8.32895 15.2014 8.50295 15.7599C8.86245 16.9076 9.46802 17.9577 10.3027 18.8799C11.1713 19.8393 12.2291 20.6001 13.4466 21.1405C14.7337 21.7106 16.1173 22 17.5592 22H17.5726C19.0191 21.9965 20.4071 21.7025 21.6984 21.126C22.9179 20.5791 23.9752 19.8153 24.8405 18.856C25.6741 17.9291 26.2788 16.8773 26.6376 15.7304C26.815 15.1631 26.9292 14.5758 26.9767 13.9841C27.021 13.4111 27.002 12.8279 26.9208 12.251ZM17.6647 17.752C14.4869 17.752 11.9101 15.4435 11.9101 12.5956C11.9101 9.74798 14.487 7.43946 17.6647 7.43946C20.8424 7.43946 23.419 9.74798 23.419 12.5956C23.4191 15.4435 20.8424 17.752 17.6647 17.752ZM20.9832 12.1425C21.03 12.9925 20.691 13.7817 20.0957 14.3659C19.4902 14.9611 18.626 15.3349 17.6598 15.3349C16.6939 15.3349 15.8297 14.9611 15.2239 14.3659C14.6289 13.7817 14.2905 12.9926 14.3371 12.1432C14.3828 11.3175 14.7849 10.5887 15.3907 10.0727C15.9863 9.56532 16.7862 9.25571 17.6598 9.25571C18.5336 9.25571 19.3332 9.56537 19.9289 10.0727C20.5348 10.5887 20.9371 11.3171 20.9832 12.1425Z" fill="#5A6A7E"/>
+              </svg>
+              <span class="sw-label">Blender</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <hr class="section-divider" />
+
+    <!-- WORK -->
+    <section id="work">
+      <div class="work-inner">
+
+        <div class="work-heading reveal">
+          <span class="contact-num">// 001</span>
+          <h2 class="contact-title">Work</h2>
+        </div>
+
+        <div class="work-filters reveal">
+          <button class="work-filter active" data-filter="all">All</button>
+          <button class="work-filter" data-filter="ui-hmi">UI / HMI</button>
+          <button class="work-filter" data-filter="3d-modeling">3D Modeling</button>
+          <button class="work-filter" data-filter="graphic-illustrations">Graphic &amp; Illustrations</button>
+        </div>
+
+        <div class="work-grid reveal">
+
+          <a class="project-card-wrap" href="#" data-category="ui-hmi">
+            <div class="project-card-bg"></div>
+            <div class="project-card-inner">
+              <div class="project-bracket"></div>
+              <span class="project-category">UI / HMI</span>
+              <h3 class="project-title">Project Title</h3>
+              <p class="project-desc">Automotive cluster &amp; infotainment HMI redesign for hypercar.</p>
+              <div class="project-tools">
+                <span class="project-tool">Photoshop</span>
+                <span class="project-tool">Blender</span>
+              </div>
+            </div>
+          </a>
+
+          <a class="project-card-wrap" href="#" data-category="ui-hmi">
+            <div class="project-card-bg"></div>
+            <div class="project-card-inner">
+              <div class="project-bracket"></div>
+              <span class="project-category">UI / HMI</span>
+              <h3 class="project-title">Project Title</h3>
+              <p class="project-desc">Automotive cluster &amp; infotainment HMI redesign for hypercar.</p>
+              <div class="project-tools">
+                <span class="project-tool">Figma</span>
+              </div>
+            </div>
+          </a>
+
+          <a class="project-card-wrap" href="project-king_kaio.html" data-category="3d-modeling">
+            <div class="project-card-bg"></div>
+            <div class="project-card-inner">
+              <div class="project-bracket"></div>
+              <span class="project-category">3D Modeling</span>
+              <h3 class="project-title">King Kaioh's Car</h3>
+              <p class="project-desc">Iconic 1957 Chevrolet Bel Air convertible, driven by King Kaioh from Dragon Ball.</p>
+              <div class="project-tools">
+                <span class="project-tool">Blender</span>
+                <span class="project-tool">Photoshop</span>
+              </div>
+            </div>
+          </a>
+
+          <a class="project-card-wrap" href="#" data-category="graphic-illustrations">
+            <div class="project-card-bg"></div>
+            <div class="project-card-inner">
+              <div class="project-bracket"></div>
+              <span class="project-category">Graphic &amp; Illustrations</span>
+              <h3 class="project-title">Project Title</h3>
+              <p class="project-desc">Automotive cluster &amp; infotainment HMI redesign for hypercar.</p>
+              <div class="project-tools">
+                <span class="project-tool">Illustrator</span>
+                <span class="project-tool">Photoshop</span>
+              </div>
+            </div>
+          </a>
+
+          <a class="project-card-wrap" href="#" data-category="graphic-illustrations">
+            <div class="project-card-bg"></div>
+            <div class="project-card-inner">
+              <div class="project-bracket"></div>
+              <span class="project-category">Graphic &amp; Illustrations</span>
+              <h3 class="project-title">Project Title</h3>
+              <p class="project-desc">Automotive cluster &amp; infotainment HMI redesign for hypercar.</p>
+              <div class="project-tools">
+                <span class="project-tool">Illustrator</span>
+              </div>
+            </div>
+          </a>
+
+          <a class="project-card-wrap" href="#" data-category="3d-modeling">
+            <div class="project-card-bg"></div>
+            <div class="project-card-inner">
+              <div class="project-bracket"></div>
+              <span class="project-category">3D Modeling</span>
+              <h3 class="project-title">Project Title</h3>
+              <p class="project-desc">Automotive cluster &amp; infotainment HMI redesign for hypercar.</p>
+              <div class="project-tools">
+                <span class="project-tool">Blender</span>
+                <span class="project-tool">Photoshop</span>
+              </div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <hr class="section-divider" />
+
+    <!-- GET IN TOUCH -->
+    <section id="get-in-touch" class="get-in-touch-section">
+      <div class="contact-inner reveal">
+        <div class="contact-heading">
+          <span class="contact-num">//</span>
+          <h2 class="contact-title">Get in touch!</h2>
+        </div>
+        <p class="contact-intro">
+          Open to new opportunities in UI/HMI design, 3D modelling, and cross-disciplinary creative work — studios,<br>
+          agencies, and independent projects.
+        </p>
+        <div class="contact-cards">
+          <div class="contact-card">
+            <span class="contact-card-label">Email</span>
+            <div class="contact-card-value-row">
+              <span class="contact-card-value">gabriele.bianco001@gmail.com</span>
+              <button class="copy-btn" onclick="copyEmail()" aria-label="Copy email">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="9" y="9" width="13" height="13" rx="1"/>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                </svg>
+              </button>
+            </div>
+            <span class="contact-card-sub">→&nbsp;&nbsp;always available</span>
+          </div>
+          <div class="contact-card">
+            <span class="contact-card-label">Location</span>
+            <span class="contact-card-value">Turin, Italy</span>
+            <span class="contact-card-sub">→&nbsp;&nbsp;open to remote &amp; on site</span>
+          </div>
+          <div class="contact-card">
+            <span class="contact-card-label">Phone</span>
+            <span class="contact-card-value">(+39) 388 822 2922</span>
+            <span class="contact-card-sub">→&nbsp;&nbsp;let's talk</span>
+          </div>
+        </div>
+        <div class="contact-btns">
+          <div class="btn-wrap">
+            <svg class="btn-svg-border" id="svgDCV"     xmlns="http://www.w3.org/2000/svg"></svg>
+            <svg class="btn-svg-fill"   id="svgDCVfill"  xmlns="http://www.w3.org/2000/svg"></svg>
+            <button class="btn btn-ghost" id="btnDCV" onclick="downloadCV()">Download CV</button>
+          </div>
+          <div class="btn-wrap">
+            <svg class="btn-svg-border" id="svgDPDF"     xmlns="http://www.w3.org/2000/svg"></svg>
+            <svg class="btn-svg-fill"   id="svgDPDFfill"  xmlns="http://www.w3.org/2000/svg"></svg>
+            <button class="btn btn-ghost" id="btnDPDF" onclick="downloadPDF()">Download Portfolio PDF</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-copy">© 2026 <span class="footer-name">Gabriele Bianco</span></span>
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/in/gabriele-bianco-483b90208/" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"><path d="M0 0v24h24v-24h-24zm8 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.397-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/gabrielebianco_" target="_blank" rel="noopener" aria-label="Instagram" class="social-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.behance.net/gabriele12b30d" target="_blank" rel="noopener" aria-label="Behance" class="social-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14h-8.027c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988h-6.466v-14.967h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zm-3.466-8.988h3.584c2.508 0 2.906-3-.312-3h-3.272v3zm3.391 3h-3.391v3.016h3.341c3.055 0 2.868-3.016.05-3.016z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+  <script>
+    window.addEventListener('load', () => {
+      setupBtn(document.getElementById('btnVW'),   document.getElementById('svgVW'),   document.getElementById('svgVWfill'),   '#00e8a2', '#00e8a2');
+      setupBtn(document.getElementById('btnGIT'),  document.getElementById('svgGIT'),  document.getElementById('svgGITfill'),  'rgba(170,185,210,0.55)', '#ffffff');
+      setupBtn(document.getElementById('btnDCV'),  document.getElementById('svgDCV'),  document.getElementById('svgDCVfill'),  'rgba(170,185,210,0.55)', '#ffffff');
+      setupBtn(document.getElementById('btnDPDF'), document.getElementById('svgDPDF'), document.getElementById('svgDPDFfill'), 'rgba(170,185,210,0.55)', '#ffffff');
+    });
+
+    document.querySelectorAll('.work-filter').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.work-filter').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.project-card-wrap').forEach(card => {
+          card.classList.toggle('hidden', filter !== 'all' && card.dataset.category !== filter);
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Gabriele Bianco</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    #about {
+      padding: calc(var(--nav-h) + 72px) 0 0;
+    }
+    .about-inner {
+      padding: 0 var(--pad);
+      width: 100%;
+    }
+    .about-heading {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    .about-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 500;
+      font-size: 13px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .about-title {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 28px;
+      color: #ffffff;
+      letter-spacing: -0.01em;
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 350px 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+    .about-photo-col {
+      display: flex;
+      flex-direction: column;
+      width: 350px;
+    }
+    .about-photo {
+      width: 350px;
+      height: 350px;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      outline: 1px solid #00FFB2;
+      outline-offset: -1px;
+    }
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      width: 350px;
+      margin-top: 24px;
+    }
+    .about-stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 20px 12px;
+      background: #0D1117;
+      border-left: 2px solid #07362D;
+    }
+    .about-stat-value {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 22px;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .about-stat-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 400;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--bio-color);
+      line-height: 1;
+      text-align: center;
+    }
+    .about-info-col {
+      display: flex;
+      flex-direction: column;
+      height: 350px;
+      padding-top: 4px;
+      max-width: 620px;
+    }
+    .about-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 6px;
+    }
+    .about-eyebrow-line {
+      width: 32px;
+      height: 1.5px;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+    .about-eyebrow-text {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 500;
+      font-size: 13px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .about-name {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 28px;
+      color: #ffffff;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      white-space: nowrap;
+    }
+    .about-bio {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.55;
+      color: var(--bio-color);
+      letter-spacing: 0.04em;
+      margin-bottom: 16px;
+    }
+    .about-bio:last-of-type { margin-bottom: 0; }
+    .about-tags {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 6px;
+      margin-top: auto;
+    }
+    .about-tags .tag {
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* EXPERIENCES */
+    .exp-section {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .exp-heading {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    .exp-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    /* Card con tagli top-right e bottom-left */
+    .exp-card {
+      --cut: 12px;
+      position: relative;
+      background: #0D1117;
+      clip-path: polygon(
+        0% 0%,
+        calc(100% - var(--cut)) 0%,
+        100% var(--cut),
+        100% 100%,
+        var(--cut) 100%,
+        0% calc(100% - var(--cut))
+      );
+      transition: background 0.35s ease;
+      cursor: default;
+    }
+    /* Border default via pseudo-elemento */
+    .exp-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: #131920;
+      clip-path: polygon(
+        0% 0%,
+        calc(100% - var(--cut)) 0%,
+        100% var(--cut),
+        100% 100%,
+        var(--cut) 100%,
+        0% calc(100% - var(--cut))
+      );
+      z-index: 0;
+      transition: background 0.35s ease;
+    }
+    .exp-card::after {
+      content: '';
+      position: absolute;
+      inset: 1px;
+      background: #0D1117;
+      clip-path: polygon(
+        0% 0%,
+        calc(100% - var(--cut) + 1px) 0%,
+        100% calc(var(--cut) - 1px),
+        100% 100%,
+        calc(var(--cut) - 1px) 100%,
+        0% calc(100% - var(--cut) + 1px)
+      );
+      z-index: 1;
+    }
+    .exp-card:hover::before { background: rgba(170,185,210,0.55); }
+    .exp-card-inner {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      padding: 0 28px;
+      height: 80px;
+      gap: 0;
+    }
+    .exp-company {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--bio-color);
+      width: 280px;
+      flex-shrink: 0;
+    }
+    .exp-role {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      color: #ffffff;
+      flex: 1;
+      text-align: center;
+    }
+    .exp-meta {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      width: 280px;
+      flex-shrink: 0;
+      text-align: right;
+    }
+
+    @media (max-width: 768px) {
+      .exp-card-inner { flex-direction: column; align-items: flex-start; gap: 6px; }
+      .exp-company, .exp-meta { width: auto; text-align: left; }
+    }
+    @media (max-width: 1024px) {
+      .about-grid { grid-template-columns: 280px 1fr; gap: 32px; }
+      .about-photo-col { width: 280px; }
+      .about-photo { width: 280px; height: 280px; }
+      .about-stats { width: 280px; }
+    }
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; gap: 32px; }
+      .about-photo-col { width: 100%; }
+      .about-photo { width: 100%; height: auto; aspect-ratio: 1/1; }
+      .about-stats { width: 100%; }
+      .about-info-col { height: auto; justify-content: flex-start; }
+      .about-tags { flex-wrap: wrap; margin-top: 24px; }
+      .about-name { white-space: normal; }
+    }
+    /* Divisori: 70px sopra e sotto */
+    .section-divider {
+      margin: 70px 0;
+    }
+    /* Education */
+    .edu-section {
+      margin-top: 0;
+      margin-bottom: 70px;
+    }
+    .edu-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SCROLL INDICATOR -->
+  <div class="scroll-indicator" id="scrollIndicator">
+    <span class="scroll-indicator-label">Scroll</span>
+    <div class="scroll-indicator-line"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a href="index.html" class="nav-logo">Gabriele Bianco&nbsp;&nbsp;//&nbsp;&nbsp;Portfolio</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="about.html" class="active">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <main>
+    <section id="about">
+      <div class="about-inner">
+
+        <div class="about-heading">
+          <span class="about-num">// 002</span>
+          <h2 class="about-title">About</h2>
+        </div>
+
+        <div class="about-grid reveal">
+
+          <!-- LEFT: photo + stats -->
+          <div class="about-photo-col">
+            <img class="about-photo" src="foto_profilo.jpg" alt="Gabriele Bianco" />
+            <div class="about-stats">
+              <div class="about-stat">
+                <span class="about-stat-value">24</span>
+                <span class="about-stat-label">Years old</span>
+              </div>
+              <div class="about-stat">
+                <span class="about-stat-value">2</span>
+                <span class="about-stat-label">Years XP</span>
+              </div>
+              <div class="about-stat">
+                <span class="about-stat-value">TO</span>
+                <span class="about-stat-label">Location</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: info -->
+          <div class="about-info-col">
+            <div class="about-eyebrow">
+              <span class="about-eyebrow-line"></span>
+              <span class="about-eyebrow-text">Designer&nbsp;·&nbsp;Turin</span>
+            </div>
+            <h1 class="about-name">Gabriele Bianco</h1>
+            <p class="about-bio">I graduated with a Bachelor's in Transportation Design at IAAD (Turin) in July 2023. I now work as a designer at a young cross-disciplinary studio in Turin.</p>
+            <p class="about-bio">My background combine design, UI / HMI and 3D polygon modelling in Blender — disciplines that, to me, share the same obsession: making complex systems feel intuitive and beautiful.</p>
+            <p class="about-bio">Outside of work: drawing, reading comics, watching anime, and taking very long walks around the city. I think best on foot.</p>
+            <div class="about-tags">
+              <span class="tag tag-ui">UI / HMI Design</span>
+              <span class="tag tag-blender">Design 3D</span>
+              <span class="tag tag-transport">Transportation Design</span>
+              <span class="tag tag-digital">Digital Illustration</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div><!-- fine about-inner -->
+
+      <!-- DIVIDER -->
+      <hr class="section-divider" />
+
+      <div class="about-inner">
+        <div class="exp-section">
+          <div class="exp-heading">
+            <span class="about-num">//</span>
+            <h2 class="about-title">Experiences</h2>
+          </div>
+          <div class="exp-list">
+
+            <div class="reveal" style="transition-delay: 0.1s">
+              <div class="exp-card">
+                <div class="exp-card-inner">
+                  <span class="exp-company">Suzuki Italia S.p.A.</span>
+                  <span class="exp-role">Automotive Exterior Design Internship</span>
+                  <span class="exp-meta">Robassomero, TO // OCT 2023 - JAN 2024</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="reveal" style="transition-delay: 0.2s">
+              <div class="exp-card">
+                <div class="exp-card-inner">
+                  <span class="exp-company">Lamborghini (Consultant)</span>
+                  <span class="exp-role">Junior Automotive Interior Design</span>
+                  <span class="exp-meta">Turin, TO // FEB 2026 - MAY 2026</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="reveal" style="transition-delay: 0.3s">
+              <div class="exp-card">
+                <div class="exp-card-inner">
+                  <span class="exp-company">Futura 22 S.R.L.</span>
+                  <span class="exp-role">Designer</span>
+                  <span class="exp-meta">Turin, TO // FEB 2024 - TODAY</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div><!-- fine about-inner exp -->
+
+      <!-- DIVIDER -->
+      <hr class="section-divider" />
+
+      <!-- EDUCATION -->
+      <div class="about-inner">
+        <div class="edu-section">
+          <div class="exp-heading">
+            <span class="about-num">//</span>
+            <h2 class="about-title">Education</h2>
+          </div>
+          <div class="edu-cards reveal">
+            <div class="contact-card">
+              <span class="contact-card-label">IAAD — Bachelor's Degree</span>
+              <span class="contact-card-value">Transportation Design Course</span>
+              <span class="contact-card-sub">→&nbsp;&nbsp;Turin, TO // OCT 2020 – JUL 2023</span>
+            </div>
+            <div class="contact-card">
+              <span class="contact-card-label">Liceo Artistico E. Catalano</span>
+              <span class="contact-card-value">Artistic High School Diploma</span>
+              <span class="contact-card-sub">→&nbsp;&nbsp;Palermo, PA // SEP 2015 – JUN 2020</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-copy">© 2026 <span class="footer-name">Gabriele Bianco</span></span>
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/in/gabriele-bianco-483b90208/" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"><path d="M0 0v24h24v-24h-24zm8 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.397-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/gabrielebianco_" target="_blank" rel="noopener" aria-label="Instagram" class="social-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.behance.net/gabriele12b30d" target="_blank" rel="noopener" aria-label="Behance" class="social-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14h-8.027c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988h-6.466v-14.967h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zm-3.466-8.988h3.584c2.508 0 2.906-3-.312-3h-3.272v3zm3.391 3h-3.391v3.016h3.341c3.055 0 2.868-3.016.05-3.016z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+
+</body>
+</html>
