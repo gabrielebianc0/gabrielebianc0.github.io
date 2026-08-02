@@ -151,6 +151,16 @@ window.addEventListener('scroll', () => {
   }
 }, { passive: true });
 
+/* ── Experience cards accordion (mobile tap) ────────────────── */
+const expCards = document.querySelectorAll('.exp-card');
+expCards.forEach(card => {
+  card.addEventListener('click', () => {
+    const wasOpen = card.classList.contains('open');
+    expCards.forEach(c => c.classList.remove('open'));
+    if (!wasOpen) card.classList.add('open');
+  });
+});
+
 /* ── Reveal on scroll (IntersectionObserver) ─────────────────── */
 const revealEls = document.querySelectorAll('.reveal');
 if (revealEls.length) {
@@ -158,7 +168,8 @@ if (revealEls.length) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
+      } else {
+        entry.target.classList.remove('visible');
       }
     });
   }, { threshold: 0.08 });

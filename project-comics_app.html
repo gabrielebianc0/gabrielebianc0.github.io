@@ -27,21 +27,46 @@
     .proj-hero-bg {
       position: absolute;
       inset: 0;
-      background: url('images/grafiche/sansimone1.png') center center / cover no-repeat;
       background-color: #0D1420;
       z-index: 0;
     }
-    /* Overlay gradiente scuro in basso */
+    /* Immagine hero a bassa opacità */
+    .proj-hero-bg img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      opacity: 0.28;
+      display: block;
+    }
+    /* Overlay radiale scuro: centro trasparente, bordi si fondono col bg */
+    .proj-hero-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        ellipse 70% 80% at 50% 40%,
+        transparent 0%,
+        rgba(8,11,16,0.45) 55%,
+        rgba(8,11,16,0.88) 80%,
+        rgba(8,11,16,0.98) 100%
+      );
+      z-index: 1;
+    }
+    /* Overlay gradiente lineare scuro in basso per il testo */
     .proj-hero-bg::after {
       content: '';
       position: absolute;
       inset: 0;
       background: linear-gradient(
         to bottom,
-        rgba(8,11,16,0.35) 0%,
-        rgba(8,11,16,0.55) 50%,
-        rgba(8,11,16,0.92) 100%
+        rgba(8,11,16,0.10) 0%,
+        rgba(8,11,16,0.30) 45%,
+        rgba(8,11,16,0.95) 100%
       );
+      z-index: 1;
     }
 
     /* Contenuto hero — in basso a sinistra */
@@ -137,17 +162,6 @@
       background: #0D1420;
       border: 1px solid var(--border-green);
     }
-    /* Didascalia progetto — sopra ogni blocco immagine */
-    .proj-gallery-label {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 500;
-      font-size: 13px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #5A6A7E;
-      margin-bottom: 4px;
-    }
-
     /* Caption opzionale sotto immagine */
     .proj-caption {
       font-family: 'Barlow Condensed', sans-serif;
@@ -282,7 +296,9 @@
 
     <!-- HERO -->
     <section class="proj-hero">
-      <div class="proj-hero-bg"></div>
+      <div class="proj-hero-bg">
+        <img src="images/app fumetti/board1.png" alt="Comics app - login/signup page" />
+      </div>
       <!-- Back to Work — top left, allineato all'eyebrow della home -->
       <a href="index.html#work" class="proj-back proj-back-top">
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
@@ -293,11 +309,11 @@
           <span class="eyebrow-line"></span>
           <!-- Cambia il testo con la categoria del progetto:
                UI / HMI · 3D Modeling · Illustrations · Logo & Misc -->
-          <span class="eyebrow-text">GRAPHIC & ILLUSTRATIONS</span>
+          <span class="eyebrow-text">UI / HMI</span>
         </div>
-        <h1 class="proj-hero-title reveal">Graphic & Logo/Icon design</h1>
+        <h1 class="proj-hero-title reveal">UI concept - Comics reading app</h1>
         <p class="proj-hero-brief">
-          Worked on several projects focused on creating and designing custom logos, specialized icon sets, and different graphic elements tailored to specific project or for personal works.
+          Ui concept for a mobile comic rental platform. The project explores an intuitive and accessible reading experience through a clean interface, seamless navigation, and personalized library management.
         </p>
       </div>
     </section>
@@ -307,11 +323,11 @@
       <div class="proj-info-inner">
         <div class="proj-info-item">
           <span class="proj-info-label">Year</span>
-          <span class="proj-info-value">2025-2026</span>
+          <span class="proj-info-value">2026</span>
         </div>
         <div class="proj-info-item">
           <span class="proj-info-label">Tools</span>
-          <span class="proj-info-value">Illustrator · Figma · Photoshop</span>
+          <span class="proj-info-value">Figma · Photoshop</span>
         </div>
         <div class="proj-info-item">
           <span class="proj-info-label">Context</span>
@@ -325,14 +341,14 @@
     <!-- GALLERY -->
     <div class="proj-gallery">
 
-      <!-- Flyer Lingottino & Liquorino Amaro San Simone -->
-      <span class="proj-gallery-label">Flyer Lingottino &amp; Liquorino Amaro San Simone</span>
-      <img class="proj-img-full" src="images/grafiche/sansimone1.png" alt="Flyer Lingottino & Liquorino Amaro San Simone" />
+      <!-- Immagine principale full width -->
+      <img class="proj-img-full" src="images/app fumetti/board1.png" alt="Comics app - login/signup page" />
 
-      <!-- Michelin CrossClimate 3 Adv Campaign -->
-      <span class="proj-gallery-label" style="margin-top: 24px;">Michelin CrossClimate 3 Adv Campaing (for design competition)</span>
-      <img class="proj-img-full" src="images/grafiche/michelin1.png" alt="Michelin CrossClimate 3 — poster and roll-up" />
-      <img class="proj-img-full" src="images/grafiche/michelin2.jpg" alt="Michelin CrossClimate 3 — wall mockup" />
+      <!-- Seconda immagine full width -->
+      <img class="proj-img-full" src="images/app fumetti/board2.png" alt="Comics app - library page" />
+
+      <!-- Terza immagine full width -->
+      <img class="proj-img-full" src="images/app fumetti/board3.png" alt="Comics app - profile page" />
 
     </div><!-- /proj-gallery -->
 

@@ -27,8 +27,7 @@
     .proj-hero-bg {
       position: absolute;
       inset: 0;
-      background: url('placeholder-hero.jpg') center center / cover no-repeat;
-      /* Sostituisci 'placeholder-hero.jpg' con la tua immagine */
+      background: url('images/sansi/sansi_render.png') center top / cover no-repeat;
       background-color: #0D1420;
       z-index: 0;
     }
@@ -75,44 +74,6 @@
     }
 
     /* ── Info Bar ─────────────────────────────────────────────── */
-    .proj-info {
-      border-top: 1px solid var(--border-green);
-      border-bottom: 1px solid var(--border-green);
-      background: #0A0E14;
-      margin-bottom: 0;
-    }
-    .proj-info-inner {
-      display: flex;
-      justify-content: center;
-      align-items: stretch;
-    }
-    .proj-info-item {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 8px;
-      padding: 28px 64px;
-      border-left: 1px solid var(--border-green);
-      text-align: left;
-    }
-    .proj-info-item:first-child {
-      border-left: none;
-    }
-    .proj-info-label {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 500;
-      font-size: 11px;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--bio-color);
-    }
-    .proj-info-value {
-      font-family: 'Inter', sans-serif;
-      font-weight: 700;
-      font-size: 15px;
-      color: #ffffff;
-      letter-spacing: -0.01em;
-    }
 
     /* ── Back button ──────────────────────────────────────────── */
     .proj-back {
@@ -276,18 +237,13 @@
 
     /* ── Responsive ───────────────────────────────────────────── */
     @media (max-width: 1024px) {
-      .proj-info-inner { grid-template-columns: repeat(3, 1fr); }
     }
     @media (max-width: 768px) {
       .proj-hero-tag { right: 24px; }
-      .proj-info-inner { grid-template-columns: 1fr 1fr; }
       .proj-img-grid { grid-template-columns: 1fr; }
       .proj-next { flex-direction: column; align-items: flex-start; gap: 24px; }
     }
     @media (max-width: 480px) {
-      .proj-info-inner { grid-template-columns: 1fr; }
-      .proj-info-item { border-left: none; border-top: 1px solid var(--border-green); padding-left: 0; padding-top: 20px; }
-      .proj-info-item:first-child { border-top: none; padding-top: 28px; }
     }
   </style>
 </head>
@@ -328,7 +284,7 @@
                UI / HMI · 3D Modeling · Illustrations · Logo & Misc -->
           <span class="eyebrow-text">GRAPHIC & ILLUSTRATIONS</span>
         </div>
-        <h1 class="proj-hero-title">Sansi</h1>
+        <h1 class="proj-hero-title reveal">Sansi</h1>
         <p class="proj-hero-brief">
           Sansi is a mysterious spirit who wanders through the shadows of an ancient monastic apothecary. There, he learned the secrets of an ancient order of alchemist monks from Turin. At the end of his long apprenticeship, the order entrusted him with the guardianship of 39 rare and precious herbs, essential for the preparation of an ancient and legendary distillate.
         </p>
@@ -358,29 +314,11 @@
     <!-- GALLERY -->
     <div class="proj-gallery">
 
-      <!-- Immagine principale full width -->
-      <!-- <img class="proj-img-full" src="render-main.jpg" alt="King Kaioh Chevrolet Bel Air — main render" /> -->
-      <div class="proj-img-full" style="display:flex;align-items:center;justify-content:center;">
-        <span style="font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:0.2em;color:#1C2535;text-transform:uppercase;">Main render — 16:9</span>
-      </div>
+      <!-- Prima immagine: sketch / concept art -->
+      <img class="proj-img-full" src="images/sansi/sansi_sketch.png" alt="Sansi — sketch and concept art" />
 
-      <!-- Griglia 2 immagini affiancate -->
-      <div class="proj-img-grid">
-        <!-- <img class="proj-img-half" src="render-detail-1.jpg" alt="Detail 1" /> -->
-        <div class="proj-img-half" style="display:flex;align-items:center;justify-content:center;">
-          <span style="font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:0.2em;color:#1C2535;text-transform:uppercase;">Detail — 16:9</span>
-        </div>
-        <!-- <img class="proj-img-half" src="render-detail-2.jpg" alt="Detail 2" /> -->
-        <div class="proj-img-half" style="display:flex;align-items:center;justify-content:center;">
-          <span style="font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:0.2em;color:#1C2535;text-transform:uppercase;">Detail — 16:9</span>
-        </div>
-      </div>
-
-      <!-- Altra immagine full width opzionale -->
-      <!-- <img class="proj-img-full" src="render-alt.jpg" alt="Alternate view" /> -->
-      <div class="proj-img-full" style="display:flex;align-items:center;justify-content:center;">
-        <span style="font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:0.2em;color:#1C2535;text-transform:uppercase;">Alt render — 16:9</span>
-      </div>
+      <!-- Seconda immagine: render finale -->
+      <img class="proj-img-full" src="images/sansi/sansi_render.png" alt="Sansi — final render" />
 
     </div><!-- /proj-gallery -->
 

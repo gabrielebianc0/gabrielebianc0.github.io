@@ -48,7 +48,7 @@ nav {
 .nav-logo {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 15px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--accent);
@@ -63,7 +63,7 @@ nav {
 .nav-links a {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 500;
-  font-size: 13px;
+  font-size: 14px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.40);
@@ -138,7 +138,7 @@ footer {
 .footer-copy {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 0.08em;
   color: var(--bio-color);
 }
@@ -273,7 +273,7 @@ footer {
 .eyebrow-text {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 500;
-  font-size: 13px;
+  font-size: 14px;
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--accent);
@@ -313,7 +313,7 @@ footer {
 .tag {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 500;
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   padding: 4px 12px;
@@ -508,7 +508,7 @@ footer {
 .contact-card-label {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 500;
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--bio-color);
@@ -540,7 +540,7 @@ footer {
 .contact-card-sub {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 0.08em;
   color: var(--accent);
 }
@@ -562,7 +562,7 @@ footer {
 .work-filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; }
 .work-filter {
   font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 500; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+  font-weight: 500; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;
   padding: 4px 12px; border: 1px solid rgba(170,185,210,0.25);
   background: transparent; color: rgba(170,185,210,0.55); border-radius: 1px;
   cursor: none !important; transition: color .25s, border-color .25s, background .25s;
@@ -578,6 +578,10 @@ footer {
 .work-filter[data-filter="graphic-illustrations"]:hover,
 .work-filter[data-filter="graphic-illustrations"].active {
   color: #C8A800; border-color: rgba(200,168,0,0.6); background: rgba(200,168,0,0.06);
+}
+.work-filter[data-filter="product-design"]:hover,
+.work-filter[data-filter="product-design"].active {
+  color: #E040A0; border-color: rgba(224,64,160,0.6); background: rgba(224,64,160,0.06);
 }
 
 /* Grid — centrata, max 3 card da 320px + gap */
@@ -630,10 +634,10 @@ footer {
     13px 100%,
     0 calc(100% - 13px)
   );
-  transition: background .3s ease;
+  transition: background .3s ease, box-shadow .3s ease;
 }
 .project-card-wrap:hover .project-card-bg { background: #00e8a2; }
-.project-card-wrap:hover .project-card-bg::after { background: #0D1722; }
+.project-card-wrap:hover .project-card-bg::after { background: #0D1722; box-shadow: inset 0 0 20px rgba(0, 232, 162, 0.3); }
 
 /* Contenuto card */
 .project-card-inner {
@@ -654,7 +658,7 @@ footer {
 .project-card-wrap:hover .project-bracket { opacity: 1; }
 .project-category {
   font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 500; font-size: 11px; letter-spacing: 0.26em;
+  font-weight: 500; font-size: 12px; letter-spacing: 0.26em;
   text-transform: uppercase; color: #00e8a2;
   margin-bottom: 6px; line-height: 1;
   padding-left: 6px;
@@ -666,13 +670,13 @@ footer {
 }
 .project-desc {
   font-family: 'Barlow Condensed', sans-serif; font-weight: 400;
-  font-size: 13px; line-height: 1.55; color: #5A6A7E; letter-spacing: 0.03em; flex: 1;
+  font-size: 14px; line-height: 1.55; color: #5A6A7E; letter-spacing: 0.03em; flex: 1;
   padding-left: 6px;
 }
 .project-tools { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 14px; flex-shrink: 0; padding-left: 6px; }
 .project-tool {
   font-family: 'Barlow Condensed', sans-serif; font-weight: 500;
-  font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+  font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
   color: #5A6A7E; border: 1px solid rgba(90,106,126,0.45);
   padding: 3px 8px; border-radius: 1px; transition: color .25s, border-color .25s;
 }
@@ -759,7 +763,7 @@ footer {
 .scroll-indicator-label {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 500;
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--bio-color);
@@ -858,3 +862,54 @@ footer {
   transform: translateY(0);
 }
 .back-to-top:hover::before { background: var(--accent); }
+
+/* ── Project page — Info bar (Year / Tools / Context) ───────── */
+.proj-info {
+  border-top: 1px solid var(--border-green);
+  border-bottom: 1px solid var(--border-green);
+  background: #0A0E14;
+  margin-bottom: 0;
+}
+.proj-info-inner {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+.proj-info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 28px 64px;
+  border-left: 1px solid var(--border-green);
+  text-align: left;
+}
+.proj-info-item:first-child {
+  border-left: none;
+}
+.proj-info-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--bio-color);
+}
+.proj-info-value {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+@media (max-width: 1024px) {
+  .proj-info-inner { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
+  .proj-info-inner { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .proj-info-inner { grid-template-columns: 1fr; }
+  .proj-info-item { border-left: none; border-top: 1px solid var(--border-green); padding-left: 0; padding-top: 20px; }
+  .proj-info-item:first-child { border-top: none; padding-top: 28px; }
+}

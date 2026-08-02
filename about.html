@@ -48,14 +48,29 @@
       flex-direction: column;
       width: 350px;
     }
-    .about-photo {
+    .about-photo-frame {
+      position: relative;
       width: 350px;
       height: 350px;
+    }
+    .about-photo {
+      position: absolute;
+      left: 2px;
+      top: 2px;
+      width: 346px;
+      height: 346px;
       object-fit: cover;
       object-position: center top;
       display: block;
-      outline: 1px solid #00FFB2;
-      outline-offset: -1px;
+      clip-path: polygon(30.828427px 0px, 346px 0px, 346px 315.171573px, 315.171573px 346px, 0px 346px, 0px 30.828427px);
+    }
+    .about-photo-frame-svg {
+      position: absolute;
+      inset: 0;
+      width: 350px;
+      height: 350px;
+      overflow: visible;
+      pointer-events: none;
     }
     .about-stats {
       display: grid;
@@ -83,7 +98,7 @@
     .about-stat-label {
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 400;
-      font-size: 10px;
+      font-size: 11px;
       letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--bio-color);
@@ -112,7 +127,7 @@
     .about-eyebrow-text {
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 500;
-      font-size: 13px;
+      font-size: 14px;
       letter-spacing: 0.28em;
       text-transform: uppercase;
       color: var(--accent);
@@ -201,6 +216,7 @@
       position: absolute;
       inset: 1px;
       background: #0D1117;
+      transition: background 0.35s ease, box-shadow 0.35s ease;
       clip-path: polygon(
         0% 0%,
         calc(100% - var(--cut) + 1px) 0%,
@@ -211,7 +227,10 @@
       );
       z-index: 1;
     }
-    .exp-card:hover::before { background: rgba(170,185,210,0.55); }
+    .exp-card:hover::before,
+    .exp-card.open::before { background: var(--accent); }
+    .exp-card:hover::after,
+    .exp-card.open::after { background: #0D1722; box-shadow: inset 0 0 20px rgba(0, 232, 162, 0.3); }
     .exp-card-inner {
       position: relative;
       z-index: 2;
@@ -224,7 +243,7 @@
     .exp-company {
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 500;
-      font-size: 12px;
+      font-size: 13px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--bio-color);
@@ -242,7 +261,7 @@
     .exp-meta {
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 400;
-      font-size: 12px;
+      font-size: 13px;
       letter-spacing: 0.06em;
       color: var(--accent);
       width: 280px;
@@ -250,20 +269,68 @@
       text-align: right;
     }
 
+    /* Descrizione espandibile */
+    .exp-desc-wrap {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.35s ease;
+    }
+    .exp-desc-inner { overflow: hidden; }
+    .exp-desc-line {
+      height: 1px;
+      background: rgba(170,185,210,0.18);
+      margin: 0 28px;
+    }
+    .exp-desc-text {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--bio-color);
+      margin: 0;
+      padding: 14px 28px 20px;
+    }
+    @media (hover: hover) {
+      .exp-card:hover .exp-desc-wrap { grid-template-rows: 1fr; }
+    }
+    .exp-card.open .exp-desc-wrap { grid-template-rows: 1fr; }
+
+    /* Chevron — solo mobile */
+    .exp-chevron {
+      display: none;
+      position: absolute;
+      z-index: 2;
+      top: 18px;
+      right: 20px;
+      color: var(--bio-color);
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+    .exp-chevron svg { display: block; }
+    .exp-card.open .exp-chevron { transform: rotate(180deg); color: var(--accent); }
+
     @media (max-width: 768px) {
-      .exp-card-inner { flex-direction: column; align-items: flex-start; gap: 6px; }
+      .exp-card-inner { flex-direction: column; align-items: flex-start; gap: 6px; height: auto; padding: 18px 48px 18px 28px; }
       .exp-company, .exp-meta { width: auto; text-align: left; }
+      .exp-desc-text { padding: 12px 28px 18px; }
+      .exp-chevron { display: block; }
+      .exp-card { cursor: pointer; }
     }
     @media (max-width: 1024px) {
       .about-grid { grid-template-columns: 280px 1fr; gap: 32px; }
       .about-photo-col { width: 280px; }
-      .about-photo { width: 280px; height: 280px; }
+      .about-photo-frame { width: 280px; height: 280px; }
+      .about-photo { width: 100%; height: 100%; left: 0; top: 0; clip-path: none; outline: 1px solid #00FFB2; outline-offset: -1px; }
+      .about-photo-frame-svg { display: none; }
       .about-stats { width: 280px; }
     }
     @media (max-width: 768px) {
       .about-grid { grid-template-columns: 1fr; gap: 32px; }
       .about-photo-col { width: 100%; }
-      .about-photo { width: 100%; height: auto; aspect-ratio: 1/1; }
+      .about-photo-frame { width: 100%; height: auto; aspect-ratio: 1/1; }
+      .about-photo { width: 100%; height: 100%; left: 0; top: 0; clip-path: none; outline: 1px solid #00FFB2; outline-offset: -1px; }
+      .about-photo-frame-svg { display: none; }
       .about-stats { width: 100%; }
       .about-info-col { height: auto; justify-content: flex-start; }
       .about-tags { flex-wrap: wrap; margin-top: 24px; }
@@ -325,7 +392,20 @@
 
           <!-- LEFT: photo + stats -->
           <div class="about-photo-col">
-            <img class="about-photo" src="foto_profilo.jpg" alt="Gabriele Bianco" />
+            <div class="about-photo-frame">
+              <img class="about-photo" src="foto_profilo.jpg" alt="Gabriele Bianco" />
+              <svg class="about-photo-frame-svg" viewBox="0 0 350 350" preserveAspectRatio="none">
+                <!-- linee sottili -->
+                <line x1="58" y1="-0.5" x2="320" y2="-0.5" stroke="#00FFB2" stroke-width="1" stroke-linecap="square"/>
+                <line x1="-0.5" y1="58" x2="-0.5" y2="320" stroke="#00FFB2" stroke-width="1" stroke-linecap="square"/>
+                <line x1="350.5" y1="30" x2="350.5" y2="292" stroke="#00FFB2" stroke-width="1" stroke-linecap="square"/>
+                <line x1="30" y1="350.5" x2="292" y2="350.5" stroke="#00FFB2" stroke-width="1" stroke-linecap="square"/>
+                <!-- angolo alto-sx: un unico poligono, giunzione a punta calcolata (no più gap) -->
+                <polygon points="0,58 0,32 32,0 58,0 58,-1 56,-3 30.757359,-3 -3,30.757359 -3,56 -1,58" fill="#00FFB2"/>
+                <!-- angolo basso-dx: idem, speculare -->
+                <polygon points="350,292 350,318 318,350 292,350 292,351 294,353 319.242641,353 353,319.242641 353,294 351,292" fill="#00FFB2"/>
+              </svg>
+            </div>
             <div class="about-stats">
               <div class="about-stat">
                 <span class="about-stat-value">24</span>
@@ -355,7 +435,7 @@
             <div class="about-tags">
               <span class="tag tag-ui">UI / HMI Design</span>
               <span class="tag tag-blender">Design 3D</span>
-              <span class="tag tag-transport">Transportation Design</span>
+              <span class="tag tag-transport">Product Design</span>
               <span class="tag tag-digital">Digital Illustration</span>
             </div>
           </div>
@@ -378,9 +458,16 @@
             <div class="reveal" style="transition-delay: 0.1s">
               <div class="exp-card">
                 <div class="exp-card-inner">
-                  <span class="exp-company">Suzuki Italia S.p.A.</span>
-                  <span class="exp-role">Automotive Exterior Design Internship</span>
-                  <span class="exp-meta">Robassomero, TO // OCT 2023 - JAN 2024</span>
+                  <span class="exp-company">Futura 22 S.R.L.</span>
+                  <span class="exp-role">Multidisciplinary Designer</span>
+                  <span class="exp-meta">Turin, TO // FEB 2024 - TODAY</span>
+                </div>
+                <span class="exp-chevron"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+                <div class="exp-desc-wrap">
+                  <div class="exp-desc-inner">
+                    <div class="exp-desc-line"></div>
+                    <p class="exp-desc-text">Placeholder: design multidisciplinare tra grafica, illustrazione e modellazione 3D per progetti diversi, dai configuratori digitali alle identità visive.</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -392,15 +479,29 @@
                   <span class="exp-role">Junior Automotive Interior Design</span>
                   <span class="exp-meta">Turin, TO // FEB 2026 - MAY 2026</span>
                 </div>
+                <span class="exp-chevron"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+                <div class="exp-desc-wrap">
+                  <div class="exp-desc-inner">
+                    <div class="exp-desc-line"></div>
+                    <p class="exp-desc-text">Placeholder: sviluppo concept per interni automotive di fascia alta, con focus su superfici, materiali e coerenza con il linguaggio del brand.</p>
+                  </div>
+                </div>
               </div>
             </div>
 
             <div class="reveal" style="transition-delay: 0.3s">
               <div class="exp-card">
                 <div class="exp-card-inner">
-                  <span class="exp-company">Futura 22 S.R.L.</span>
-                  <span class="exp-role">Designer</span>
-                  <span class="exp-meta">Turin, TO // FEB 2024 - TODAY</span>
+                  <span class="exp-company">Suzuki Italia S.p.A.</span>
+                  <span class="exp-role">Automotive Exterior Design Internship</span>
+                  <span class="exp-meta">Robassomero, TO // OCT 2023 - JAN 2024</span>
+                </div>
+                <span class="exp-chevron"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+                <div class="exp-desc-wrap">
+                  <div class="exp-desc-inner">
+                    <div class="exp-desc-line"></div>
+                    <p class="exp-desc-text">Placeholder: tirocinio in design esterno automotive con sketching, modellazione volumetrica e supporto al team nella definizione di superfici carrozzeria.</p>
+                  </div>
                 </div>
               </div>
             </div>

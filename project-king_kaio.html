@@ -47,7 +47,7 @@
       position: absolute;
       inset: 0;
       background: radial-gradient(
-        ellipse 70% 80% at 60% 40%,
+        ellipse 70% 80% at 50% 40%,
         transparent 0%,
         rgba(8,11,16,0.45) 55%,
         rgba(8,11,16,0.88) 80%,
@@ -99,44 +99,6 @@
     }
 
     /* ── Info Bar ─────────────────────────────────────────────── */
-    .proj-info {
-      border-top: 1px solid var(--border-green);
-      border-bottom: 1px solid var(--border-green);
-      background: #0A0E14;
-      margin-bottom: 0;
-    }
-    .proj-info-inner {
-      display: flex;
-      justify-content: center;
-      align-items: stretch;
-    }
-    .proj-info-item {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 8px;
-      padding: 28px 64px;
-      border-left: 1px solid var(--border-green);
-      text-align: left;
-    }
-    .proj-info-item:first-child {
-      border-left: none;
-    }
-    .proj-info-label {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 500;
-      font-size: 11px;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--bio-color);
-    }
-    .proj-info-value {
-      font-family: 'Inter', sans-serif;
-      font-weight: 700;
-      font-size: 15px;
-      color: #ffffff;
-      letter-spacing: -0.01em;
-    }
 
     /* ── Back button ──────────────────────────────────────────── */
     .proj-back {
@@ -300,18 +262,13 @@
 
     /* ── Responsive ───────────────────────────────────────────── */
     @media (max-width: 1024px) {
-      .proj-info-inner { grid-template-columns: repeat(3, 1fr); }
     }
     @media (max-width: 768px) {
       .proj-hero-tag { right: 24px; }
-      .proj-info-inner { grid-template-columns: 1fr 1fr; }
       .proj-img-grid { grid-template-columns: 1fr; }
       .proj-next { flex-direction: column; align-items: flex-start; gap: 24px; }
     }
     @media (max-width: 480px) {
-      .proj-info-inner { grid-template-columns: 1fr; }
-      .proj-info-item { border-left: none; border-top: 1px solid var(--border-green); padding-left: 0; padding-top: 20px; }
-      .proj-info-item:first-child { border-top: none; padding-top: 28px; }
     }
   </style>
 </head>
@@ -354,7 +311,7 @@
                UI / HMI · 3D Modeling · Illustrations · Logo & Misc -->
           <span class="eyebrow-text">3D MODELING</span>
         </div>
-        <h1 class="proj-hero-title">King Kaioh's car</h1>
+        <h1 class="proj-hero-title reveal">King Kaioh's car</h1>
         <p class="proj-hero-brief">
           During my free time, I tried to recreate the iconic 1957 Chevrolet Bel Air convertible, driven by King Kaioh from Dragon Ball, entirely in Blender.
          </p>
@@ -383,6 +340,9 @@
 
     <!-- GALLERY -->
     <div class="proj-gallery">
+
+      <!-- Video girotondo — full width, autoplay in loop senza audio -->
+      <video class="proj-img-full" src="images/king-kaio/girotondo.mp4" autoplay loop muted playsinline></video>
 
       <!-- Render 3/4 anteriore — full width -->
       <img class="proj-img-full" src="images/king-kaio/render_front.png" alt="King Kaioh's car — 3/4 front render" />
