@@ -249,12 +249,28 @@ footer {
    HERO — solo index.html
 ══════════════════════════════════════════════════════════════ */
 #hero {
+  position: relative;
+  overflow: hidden;
   padding-top: var(--nav-h);
   min-height: 100vh;
   display: flex;
   align-items: flex-start;
 }
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url('images/hero/cluster_12.png');
+  background-size: cover;
+  background-position: center right;
+  opacity: 0.2;
+  -webkit-mask-image: radial-gradient(ellipse 75% 65% at 62% 48%, #000 0%, #000 25%, transparent 72%);
+  mask-image: radial-gradient(ellipse 75% 65% at 62% 48%, #000 0%, #000 25%, transparent 72%);
+  pointer-events: none;
+}
 .hero-inner {
+  position: relative;
+  z-index: 1;
   padding: 80px var(--pad);
   width: 100%;
 }
