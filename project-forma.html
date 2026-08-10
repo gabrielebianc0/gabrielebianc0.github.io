@@ -156,6 +156,21 @@
       display: block;
       background: #0D1420;
     }
+    /* Crop/zoom mirato sullo schermo del mockup laptop */
+    .proj-img-crop-mockup {
+      overflow: hidden;
+      position: relative;
+    }
+    .proj-img-crop-mockup img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 40%;
+      transform: scale(1.6);
+      transform-origin: 50% 40%;
+      display: block;
+    }
+
     /* Placeholder visivo per immagini mancanti */
     .proj-img-full,
     .proj-img-half {
@@ -297,7 +312,7 @@
     <!-- HERO -->
     <section class="proj-hero">
       <div class="proj-hero-bg">
-        <img src="images/app fumetti/board1.png" alt="Comics app - login/signup page" />
+        <img src="images/forma/dd_mockup1.png" alt="3D software - screens" />
       </div>
       <!-- Back to Work — top left, allineato all'eyebrow della home -->
       <a href="index.html#work" class="proj-back proj-back-top">
@@ -351,7 +366,9 @@
       <img class="proj-img-full" src="images/forma/dd_screen6.png" alt="3D software - screens" />
       
       <!-- Quarta immagine full width -->
-      <img class="proj-img-full" src="images/forma/dd_mockup1.png" alt="3D software - screens" />
+      <div class="proj-img-full proj-img-crop-mockup">
+        <img src="images/forma/dd_mockup1.png" alt="3D software - screens" />
+      </div>
 
       <!-- Immagini — griglia 2 colonne -->
       <div class="proj-img-grid">
