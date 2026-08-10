@@ -13,91 +13,6 @@
        PROJECT PAGE — stili specifici
     ══════════════════════════════════════════════════════════════ */
 
-    /* ── Hero ─────────────────────────────────────────────────── */
-    .proj-hero {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      min-height: 560px;
-      display: flex;
-      align-items: flex-end;
-      overflow: hidden;
-      padding-top: var(--nav-h);
-    }
-    .proj-hero-bg {
-      position: absolute;
-      inset: 0;
-      background-color: #0D1420;
-      z-index: 0;
-    }
-    /* Immagine hero a bassa opacità */
-    .proj-hero-bg img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center center;
-      opacity: 0.28;
-      display: block;
-    }
-    /* Overlay radiale scuro: centro trasparente, bordi si fondono col bg */
-    .proj-hero-bg::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(
-        ellipse 70% 80% at 50% 40%,
-        transparent 0%,
-        rgba(8,11,16,0.45) 55%,
-        rgba(8,11,16,0.88) 80%,
-        rgba(8,11,16,0.98) 100%
-      );
-      z-index: 1;
-    }
-    /* Overlay gradiente lineare scuro in basso per il testo */
-    .proj-hero-bg::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(8,11,16,0.10) 0%,
-        rgba(8,11,16,0.30) 45%,
-        rgba(8,11,16,0.95) 100%
-      );
-      z-index: 1;
-    }
-
-    /* Contenuto hero — in basso a sinistra */
-    .proj-hero-content {
-      position: relative;
-      z-index: 2;
-      padding: 0 var(--pad) 64px;
-      width: 100%;
-    }
-    /* eyebrow uses shared .hero-eyebrow, .eyebrow-line, .eyebrow-text from style.css */
-    .proj-hero-content .hero-eyebrow { margin-bottom: 16px; }
-    .proj-hero-title {
-      font-family: 'Inter', sans-serif;
-      font-weight: 700;
-      font-size: 34px;
-      color: #ffffff;
-      line-height: 1.15;
-      letter-spacing: -0.01em;
-      margin-bottom: 20px;
-      white-space: nowrap;
-    }
-    .proj-hero-brief {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 1.7;
-      color: var(--bio-color);
-      letter-spacing: 0.04em;
-      max-width: 680px;
-    }
-
     /* ── Info Bar ─────────────────────────────────────────────── */
 
     /* ── Back button ──────────────────────────────────────────── */
@@ -324,9 +239,7 @@
 
     <!-- HERO -->
     <section class="proj-hero">
-      <div class="proj-hero-bg">
-        <img src="images/illustrazioni/Airone.jpg" alt="" aria-hidden="true" />
-      </div>
+      <div class="proj-hero-bg" style="background-image:url('images/illustrazioni/Airone.jpg')"></div>
       <!-- Back to Work — top left, allineato all'eyebrow della home -->
       <a href="index.html#work" class="proj-back proj-back-top">
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
