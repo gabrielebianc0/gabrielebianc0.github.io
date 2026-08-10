@@ -263,7 +263,7 @@ footer {
   background-image: url('images/illustrazioni/cluster%2012.png');
   background-size: cover;
   background-position: center 18%;
-  opacity: 0.12;
+  opacity: 0.15;
   -webkit-mask-image: radial-gradient(ellipse farthest-side at 50% 50%, #000 0%, #000 22%, transparent 100%);
   mask-image: radial-gradient(ellipse farthest-side at 50% 50%, #000 0%, #000 22%, transparent 100%);
   pointer-events: none;
