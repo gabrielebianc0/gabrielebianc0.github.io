@@ -116,93 +116,6 @@
       .proj-img-mixed .proj-img-half { aspect-ratio: 16 / 9; height: auto; }
     }
 
-    /* ── Next Project ─────────────────────────────────────────── */
-    .proj-next {
-      border-top: 1px solid var(--border-green);
-      padding: 48px var(--pad);
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      text-decoration: none;
-      overflow: hidden;
-      transition: background 0.35s ease;
-      cursor: none !important;
-    }
-    .proj-next:hover {
-      background: rgba(0,232,162,0.02);
-    }
-    /* Wrapper — allineato a sinistra, si sposta sx al hover */
-    .proj-next-inner {
-      display: flex;
-      align-items: center;
-      gap: 0;
-      transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-    .proj-next:hover .proj-next-inner {
-      transform: translateX(-24px);
-    }
-    /* Label "Next Project" */
-    .proj-next-label {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 500;
-      font-size: 13px;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--bio-color);
-      transition: color 0.35s ease;
-      white-space: nowrap;
-    }
-    .proj-next:hover .proj-next-label {
-      color: rgba(170,185,210,0.8);
-    }
-    /* Separatore verticale verde */
-    .proj-next-sep {
-      width: 1px;
-      height: 18px;
-      background: var(--accent);
-      margin: 0 20px;
-      opacity: 0;
-      transform: scaleY(0);
-      transform-origin: center;
-      transition: opacity 0.25s ease 0.15s, transform 0.25s ease 0.15s;
-      flex-shrink: 0;
-    }
-    .proj-next:hover .proj-next-sep {
-      opacity: 1;
-      transform: scaleY(1);
-    }
-    /* Titolo — slide in + fade */
-    .proj-next-title {
-      font-family: 'Inter', sans-serif;
-      font-weight: 700;
-      font-size: 20px;
-      color: #ffffff;
-      letter-spacing: -0.01em;
-      white-space: nowrap;
-      opacity: 0;
-      transform: translateX(-10px);
-      transition: opacity 0.35s ease 0.2s, transform 0.35s ease 0.2s;
-    }
-    .proj-next:hover .proj-next-title {
-      opacity: 1;
-      transform: translateX(0);
-    }
-    /* Freccia — appare per ultima */
-    .proj-next-arrow {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-left: 14px;
-      opacity: 0;
-      transform: translateX(-6px);
-      transition: opacity 0.3s ease 0.3s, transform 0.3s ease 0.3s;
-      flex-shrink: 0;
-    }
-    .proj-next:hover .proj-next-arrow {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
     /* ── Responsive ───────────────────────────────────────────── */
     @media (max-width: 1024px) {
     }
@@ -303,11 +216,11 @@
     </div><!-- /proj-gallery -->
 
     <!-- NEXT PROJECT -->
-    <a href="project.html" class="proj-next">
+    <a href="project-monarca.html" class="proj-next">
       <div class="proj-next-inner">
         <span class="proj-next-label">Next Project</span>
         <div class="proj-next-sep"></div>
-        <span class="proj-next-title">Project Title</span>
+        <span class="proj-next-title">UI for a racing video game</span>
         <div class="proj-next-arrow">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00e8a2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
         </div>
