@@ -74,12 +74,12 @@ function copyEmail() {
 
 /* ── Downloads ───────────────────────────────────────────────── */
 function downloadCV() {
-  const cvPath = "pdfs/2408_gb_resume.pdf";
+  const cvPath = "pdfs/2608_gb_resume.pdf";
 
   // Scarica il file
   const link = document.createElement("a");
   link.href = cvPath;
-  link.download = "2408_gb_resume.pdf";
+  link.download = "2608_gb_resume.pdf";
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
