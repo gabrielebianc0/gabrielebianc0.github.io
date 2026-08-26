@@ -13,91 +13,6 @@
        PROJECT PAGE — stili specifici
     ══════════════════════════════════════════════════════════════ */
 
-    /* ── Hero ─────────────────────────────────────────────────── */
-    .proj-hero {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      min-height: 560px;
-      display: flex;
-      align-items: flex-end;
-      overflow: hidden;
-      padding-top: var(--nav-h);
-    }
-    .proj-hero-bg {
-      position: absolute;
-      inset: 0;
-      background-color: #0D1420;
-      z-index: 0;
-    }
-    /* Immagine hero a bassa opacità */
-    .proj-hero-bg img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center center;
-      opacity: 0.28;
-      display: block;
-    }
-    /* Overlay radiale scuro: centro trasparente, bordi si fondono col bg */
-    .proj-hero-bg::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(
-        ellipse 70% 80% at 50% 40%,
-        transparent 0%,
-        rgba(8,11,16,0.45) 55%,
-        rgba(8,11,16,0.88) 80%,
-        rgba(8,11,16,0.98) 100%
-      );
-      z-index: 1;
-    }
-    /* Overlay gradiente lineare scuro in basso per il testo */
-    .proj-hero-bg::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(8,11,16,0.10) 0%,
-        rgba(8,11,16,0.30) 45%,
-        rgba(8,11,16,0.95) 100%
-      );
-      z-index: 1;
-    }
-
-    /* Contenuto hero — in basso a sinistra */
-    .proj-hero-content {
-      position: relative;
-      z-index: 2;
-      padding: 0 var(--pad) 64px;
-      width: 100%;
-    }
-    /* eyebrow uses shared .hero-eyebrow, .eyebrow-line, .eyebrow-text from style.css */
-    .proj-hero-content .hero-eyebrow { margin-bottom: 16px; }
-    .proj-hero-title {
-      font-family: 'Inter', sans-serif;
-      font-weight: 700;
-      font-size: 34px;
-      color: #ffffff;
-      line-height: 1.15;
-      letter-spacing: -0.01em;
-      margin-bottom: 20px;
-      white-space: nowrap;
-    }
-    .proj-hero-brief {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 1.7;
-      color: var(--bio-color);
-      letter-spacing: 0.04em;
-      max-width: 680px;
-    }
-
     /* ── Info Bar ─────────────────────────────────────────────── */
 
     /* ── Back button ──────────────────────────────────────────── */
@@ -173,93 +88,6 @@
       margin-bottom: 8px;
     }
 
-    /* ── Next Project ─────────────────────────────────────────── */
-    .proj-next {
-      border-top: 1px solid var(--border-green);
-      padding: 48px var(--pad);
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      text-decoration: none;
-      overflow: hidden;
-      transition: background 0.35s ease;
-      cursor: none !important;
-    }
-    .proj-next:hover {
-      background: rgba(0,232,162,0.02);
-    }
-    /* Wrapper — allineato a sinistra, si sposta sx al hover */
-    .proj-next-inner {
-      display: flex;
-      align-items: center;
-      gap: 0;
-      transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-    .proj-next:hover .proj-next-inner {
-      transform: translateX(-24px);
-    }
-    /* Label "Next Project" */
-    .proj-next-label {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 500;
-      font-size: 13px;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--bio-color);
-      transition: color 0.35s ease;
-      white-space: nowrap;
-    }
-    .proj-next:hover .proj-next-label {
-      color: rgba(170,185,210,0.8);
-    }
-    /* Separatore verticale verde */
-    .proj-next-sep {
-      width: 1px;
-      height: 18px;
-      background: var(--accent);
-      margin: 0 20px;
-      opacity: 0;
-      transform: scaleY(0);
-      transform-origin: center;
-      transition: opacity 0.25s ease 0.15s, transform 0.25s ease 0.15s;
-      flex-shrink: 0;
-    }
-    .proj-next:hover .proj-next-sep {
-      opacity: 1;
-      transform: scaleY(1);
-    }
-    /* Titolo — slide in + fade */
-    .proj-next-title {
-      font-family: 'Inter', sans-serif;
-      font-weight: 700;
-      font-size: 20px;
-      color: #ffffff;
-      letter-spacing: -0.01em;
-      white-space: nowrap;
-      opacity: 0;
-      transform: translateX(-10px);
-      transition: opacity 0.35s ease 0.2s, transform 0.35s ease 0.2s;
-    }
-    .proj-next:hover .proj-next-title {
-      opacity: 1;
-      transform: translateX(0);
-    }
-    /* Freccia — appare per ultima */
-    .proj-next-arrow {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-left: 14px;
-      opacity: 0;
-      transform: translateX(-6px);
-      transition: opacity 0.3s ease 0.3s, transform 0.3s ease 0.3s;
-      flex-shrink: 0;
-    }
-    .proj-next:hover .proj-next-arrow {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
     /* ── Responsive ───────────────────────────────────────────── */
     @media (max-width: 1024px) {
     }
@@ -296,9 +124,7 @@
 
     <!-- HERO -->
     <section class="proj-hero">
-      <div class="proj-hero-bg">
-        <img src="images/monarca/Monarca_02.png" alt="Monarca — garage view" />
-      </div>
+      <div class="proj-hero-bg" style="background-image:url('images/monarca/Monarca_02.png')"></div>
       <!-- Back to Work — top left, allineato all'eyebrow della home -->
       <a href="index.html#work" class="proj-back proj-back-top">
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
@@ -357,11 +183,11 @@
     </div><!-- /proj-gallery -->
 
     <!-- NEXT PROJECT -->
-    <a href="project.html" class="proj-next">
+    <a href="project-ui3dconfig.html" class="proj-next">
       <div class="proj-next-inner">
         <span class="proj-next-label">Next Project</span>
         <div class="proj-next-sep"></div>
-        <span class="proj-next-title">Project Title</span>
+        <span class="proj-next-title">UI for 3D configurators</span>
         <div class="proj-next-arrow">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00e8a2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
         </div>

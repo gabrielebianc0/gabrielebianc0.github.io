@@ -71,23 +71,27 @@
       display: block;
       background: #0D1420;
     }
+    /* Crop/zoom mirato sullo schermo del mockup laptop */
+    .proj-img-crop-mockup {
+      overflow: hidden;
+      position: relative;
+    }
+    .proj-img-crop-mockup img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 40%;
+      transform: scale(1.6);
+      transform-origin: 50% 40%;
+      display: block;
+    }
+
     /* Placeholder visivo per immagini mancanti */
     .proj-img-full,
     .proj-img-half {
       background: #0D1420;
       border: 1px solid var(--border-green);
     }
-    /* Didascalia progetto — sopra ogni blocco immagine */
-    .proj-gallery-label {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 500;
-      font-size: 13px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #5A6A7E;
-      margin-bottom: 4px;
-    }
-
     /* Caption opzionale sotto immagine */
     .proj-caption {
       font-family: 'Barlow Condensed', sans-serif;
@@ -135,7 +139,7 @@
 
     <!-- HERO -->
     <section class="proj-hero">
-      <div class="proj-hero-bg" style="background-image:url('images/grafiche/sansimone1.png')"></div>
+      <div class="proj-hero-bg" style="background-image:url('images/forma/dd_mockup1.png')"></div>
       <!-- Back to Work — top left, allineato all'eyebrow della home -->
       <a href="index.html#work" class="proj-back proj-back-top">
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
@@ -146,11 +150,11 @@
           <span class="eyebrow-line"></span>
           <!-- Cambia il testo con la categoria del progetto:
                UI / HMI · 3D Modeling · Illustrations · Logo & Misc -->
-          <span class="eyebrow-text">GRAPHIC & ILLUSTRATIONS</span>
+          <span class="eyebrow-text">UI / HMI</span>
         </div>
-        <h1 class="proj-hero-title reveal">Graphic & Logo/Icon design</h1>
+        <h1 class="proj-hero-title reveal">UI for a 3D visualization software</h1>
         <p class="proj-hero-brief">
-          Worked on several projects focused on creating and designing custom logos, specialized icon sets, and different graphic elements tailored to specific project or for personal works.
+          Full UI/UX design for a real-time 3D visualization and configuration software, allowing users to customize materials, colors and finishes on 3D models with a technical, information-dense toolset and intuitive interface, balancing precise control with a clean, minimal visual language.
         </p>
       </div>
     </section>
@@ -160,15 +164,15 @@
       <div class="proj-info-inner">
         <div class="proj-info-item">
           <span class="proj-info-label">Year</span>
-          <span class="proj-info-value">2025-2026</span>
+          <span class="proj-info-value">2026</span>
         </div>
         <div class="proj-info-item">
           <span class="proj-info-label">Tools</span>
-          <span class="proj-info-value">Illustrator · Figma · Photoshop</span>
+          <span class="proj-info-value">Figma · Illustrator</span>
         </div>
         <div class="proj-info-item">
           <span class="proj-info-label">Context</span>
-          <span class="proj-info-value">Personal Project</span>
+          <span class="proj-info-value">Internal Project</span>
         </div>
       </div>
     </div>
@@ -178,23 +182,37 @@
     <!-- GALLERY -->
     <div class="proj-gallery">
 
-      <!-- Flyer Lingottino & Liquorino Amaro San Simone -->
-      <span class="proj-gallery-label">Flyer Lingottino &amp; Liquorino Amaro San Simone</span>
-      <img class="proj-img-full" src="images/grafiche/sansimone1.png" alt="Flyer Lingottino & Liquorino Amaro San Simone" />
+      <!-- Immagine principale full width -->
+      <img class="proj-img-full" src="images/forma/dd_wire.png" alt="3D software - screens" />
 
-      <!-- Michelin CrossClimate 3 Adv Campaign -->
-      <span class="proj-gallery-label" style="margin-top: 24px;">Michelin CrossClimate 3 Adv Campaing (for design competition)</span>
-      <img class="proj-img-full" src="images/grafiche/michelin1.png" alt="Michelin CrossClimate 3 — poster and roll-up" />
-      <img class="proj-img-full" src="images/grafiche/michelin2.jpg" alt="Michelin CrossClimate 3 — wall mockup" />
+      <!-- Seconda immagine full width -->
+      <img class="proj-img-full" src="images/forma/dd_wire1.png" alt="3D software - screens" />
+
+      <!-- Terza immagine full width -->
+      <img class="proj-img-full" src="images/forma/dd_screen6.png" alt="3D software - screens" />
+      
+      <!-- Quarta immagine full width -->
+      <div class="proj-img-full proj-img-crop-mockup">
+        <img src="images/forma/dd_mockup1.png" alt="3D software - screens" />
+      </div>
+
+      <!-- Immagini — griglia 2 colonne -->
+      <div class="proj-img-grid">
+        <img class="proj-img-half" src="images/forma/dd_screen3.png" alt="3D software — screens" />
+        <img class="proj-img-half" src="images/forma/dd_screen2.png" alt="3D software — screens" />
+      </div>
+
+      <!-- Quinta immagine full width -->
+      <img class="proj-img-full" src="images/forma/dd_screen4.png" alt="3D software - screens" />
 
     </div><!-- /proj-gallery -->
 
     <!-- NEXT PROJECT -->
-    <a href="project-illustrations.html" class="proj-next">
+    <a href="project-comics_app.html" class="proj-next">
       <div class="proj-next-inner">
         <span class="proj-next-label">Next Project</span>
         <div class="proj-next-sep"></div>
-        <span class="proj-next-title">Digital Illustrations</span>
+        <span class="proj-next-title">UI concept - Comics reading app</span>
         <div class="proj-next-arrow">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00e8a2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
         </div>

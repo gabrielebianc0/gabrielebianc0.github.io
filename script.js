@@ -73,7 +73,20 @@ function copyEmail() {
 }
 
 /* ── Downloads ───────────────────────────────────────────────── */
-function downloadCV()  { showToast('CV coming soon — file not yet uploaded'); }
+function downloadCV() {
+  const cvPath = "pdfs/2608_gb_resume.pdf";
+
+  // Scarica il file
+  const link = document.createElement("a");
+  link.href = cvPath;
+  link.download = "2608_gb_resume.pdf";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+
+  // Apre il PDF in una nuova scheda per la visualizzazione
+  window.open(cvPath, "_blank");
+}
 function downloadPDF() { showToast('Portfolio PDF coming soon — file not yet uploaded'); }
 
 /* ── Custom Cursor ───────────────────────────────────────────── */
