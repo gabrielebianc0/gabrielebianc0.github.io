@@ -150,21 +150,23 @@ if (scrollIndicator) {
   }, { passive: true });
 }
 
-/* ── Back to Top ─────────────────────────────────────────────── */
-const btt = document.createElement('button');
-btt.className   = 'back-to-top';
-btt.setAttribute('aria-label', 'Back to top');
-btt.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00e8a2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>`;
-btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-document.body.appendChild(btt);
+/* ── Back to Top (non sulle pagine progetto) ───────────────────── */
+if (!document.querySelector('.proj-next')) {
+  const btt = document.createElement('button');
+  btt.className   = 'back-to-top';
+  btt.setAttribute('aria-label', 'Back to top');
+  btt.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00e8a2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>`;
+  btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  document.body.appendChild(btt);
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 300) {
-    btt.classList.add('visible');
-  } else {
-    btt.classList.remove('visible');
-  }
-}, { passive: true });
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      btt.classList.add('visible');
+    } else {
+      btt.classList.remove('visible');
+    }
+  }, { passive: true });
+}
 
 /* ── Experience cards accordion (mobile tap) ────────────────── */
 const expCards = document.querySelectorAll('.exp-card');
