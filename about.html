@@ -57,18 +57,18 @@
       position: absolute;
       left: 2px;
       top: 2px;
-      width: 346px;
-      height: 346px;
+      width: calc(100% - 4px);
+      height: calc(100% - 4px);
       object-fit: cover;
       object-position: center top;
       display: block;
-      clip-path: polygon(30.828427px 0px, 346px 0px, 346px 315.171573px, 315.171573px 346px, 0px 346px, 0px 30.828427px);
+      clip-path: polygon(8.911% 0%, 100% 0%, 100% 91.089%, 91.089% 100%, 0% 100%, 0% 8.911%);
     }
     .about-photo-frame-svg {
       position: absolute;
       inset: 0;
-      width: 350px;
-      height: 350px;
+      width: 100%;
+      height: 100%;
       overflow: visible;
       pointer-events: none;
     }
@@ -321,16 +321,12 @@
       .about-grid { grid-template-columns: 280px 1fr; gap: 32px; }
       .about-photo-col { width: 280px; }
       .about-photo-frame { width: 280px; height: 280px; }
-      .about-photo { width: 100%; height: 100%; left: 0; top: 0; clip-path: none; outline: 1px solid #00FFB2; outline-offset: -1px; }
-      .about-photo-frame-svg { display: none; }
       .about-stats { width: 280px; }
     }
     @media (max-width: 768px) {
       .about-grid { grid-template-columns: 1fr; gap: 32px; }
       .about-photo-col { width: 100%; }
       .about-photo-frame { width: 100%; height: auto; aspect-ratio: 1/1; }
-      .about-photo { width: 100%; height: 100%; left: 0; top: 0; clip-path: none; outline: 1px solid #00FFB2; outline-offset: -1px; }
-      .about-photo-frame-svg { display: none; }
       .about-stats { width: 100%; }
       .about-info-col { height: auto; justify-content: flex-start; }
       .about-tags { flex-wrap: wrap; margin-top: 24px; }
@@ -512,10 +508,10 @@
               <img class="about-photo" src="foto_profilo.jpg" alt="Gabriele Bianco" />
               <svg class="about-photo-frame-svg" viewBox="0 0 350 350" preserveAspectRatio="none">
                 <!-- linee sottili -->
-                <line x1="58" y1="-0.5" x2="320" y2="-0.5" stroke="#00FFB2" stroke-width="1" stroke-linecap="square"/>
-                <line x1="-0.5" y1="58" x2="-0.5" y2="320" stroke="#00FFB2" stroke-width="1" stroke-linecap="square"/>
-                <line x1="350.5" y1="30" x2="350.5" y2="292" stroke="#00FFB2" stroke-width="1" stroke-linecap="square"/>
-                <line x1="30" y1="350.5" x2="292" y2="350.5" stroke="#00FFB2" stroke-width="1" stroke-linecap="square"/>
+                <line x1="58" y1="-0.5" x2="320" y2="-0.5" stroke="#00FFB2" stroke-width="1" stroke-linecap="square" vector-effect="non-scaling-stroke"/>
+                <line x1="-0.5" y1="58" x2="-0.5" y2="320" stroke="#00FFB2" stroke-width="1" stroke-linecap="square" vector-effect="non-scaling-stroke"/>
+                <line x1="350.5" y1="30" x2="350.5" y2="292" stroke="#00FFB2" stroke-width="1" stroke-linecap="square" vector-effect="non-scaling-stroke"/>
+                <line x1="30" y1="350.5" x2="292" y2="350.5" stroke="#00FFB2" stroke-width="1" stroke-linecap="square" vector-effect="non-scaling-stroke"/>
                 <!-- angolo alto-sx: un unico poligono, giunzione a punta calcolata (no più gap) -->
                 <polygon points="0,58 0,32 32,0 58,0 58,-1 56,-3 30.757359,-3 -3,30.757359 -3,56 -1,58" fill="#00FFB2"/>
                 <!-- angolo basso-dx: idem, speculare -->
