@@ -757,6 +757,14 @@ footer {
     color: rgba(170,185,210,0.75); border-color: rgba(170,185,210,0.3);
   }
 }
+/* Stato "acceso" al tap su touch — impostato via JS, ripulito al ritorno sulla pagina */
+.project-card-wrap.tap-active { transform: translateY(-3px); }
+.project-card-wrap.tap-active .project-card-bg { background: #00e8a2; }
+.project-card-wrap.tap-active .project-card-bg::after { background: #0D1722; box-shadow: inset 0 0 20px rgba(0, 232, 162, 0.3); }
+.project-card-wrap.tap-active .project-bracket { opacity: 1; }
+.project-card-wrap.tap-active .project-tool {
+  color: rgba(170,185,210,0.75); border-color: rgba(170,185,210,0.3);
+}
 
 /* ══════════════════════════════════════════════════════════════
    RESPONSIVE

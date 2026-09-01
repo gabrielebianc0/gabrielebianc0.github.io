@@ -178,6 +178,15 @@ expCards.forEach(card => {
   });
 });
 
+/* ── Project cards: feedback verde al tap, ripulito al ritorno sulla pagina ── */
+document.querySelectorAll('.project-card-wrap').forEach(card => {
+  card.addEventListener('click', () => card.classList.add('tap-active'));
+});
+window.addEventListener('pageshow', () => {
+  document.querySelectorAll('.project-card-wrap.tap-active')
+    .forEach(card => card.classList.remove('tap-active'));
+});
+
 /* ── Reveal on scroll (IntersectionObserver) ─────────────────── */
 const revealEls = document.querySelectorAll('.reveal');
 if (revealEls.length) {
