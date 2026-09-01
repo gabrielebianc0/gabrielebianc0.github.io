@@ -989,13 +989,16 @@ footer {
   letter-spacing: -0.01em;
 }
 @media (max-width: 1024px) {
-  .proj-info-inner { display: grid; grid-template-columns: repeat(3, 1fr); }
-  .proj-info-item { padding: 24px 20px; }
+  .proj-info-inner { display: grid; grid-template-columns: repeat(3, 1fr); padding: 0 var(--pad); }
+  .proj-info-item { padding: 24px 16px; }
 }
 @media (max-width: 768px) {
-  .proj-info-inner { grid-template-columns: 1fr; }
-  .proj-info-item { border-left: none; border-top: 1px solid var(--border-green); padding: 20px 0; }
-  .proj-info-item:first-child { border-top: none; padding-top: 24px; }
+  .proj-info-item { padding: 20px 12px; gap: 6px; }
+  .proj-info-label { font-size: 11px; letter-spacing: 0.18em; }
+  .proj-info-value { font-size: 13px; }
+}
+@media (max-width: 480px) {
+  .proj-info-item { padding: 16px 8px; }
 }
 
 /* ══════════════════════════════════════════════════════════════
