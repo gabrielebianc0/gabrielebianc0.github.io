@@ -813,6 +813,15 @@ footer {
   border-color: rgba(0,232,162,0.85);
 }
 
+/* Dispositivi touch: niente cursore custom, torna al comportamento nativo */
+@media (hover: none), (pointer: coarse) {
+  * { cursor: auto !important; }
+  .cursor-dot,
+  .cursor-ring {
+    display: none !important;
+  }
+}
+
 /* ══════════════════════════════════════════════════════════════
    SCROLL INDICATOR
 ══════════════════════════════════════════════════════════════ */
@@ -830,6 +839,9 @@ footer {
   pointer-events: none;
 }
 .scroll-indicator.hidden { opacity: 0; pointer-events: none; }
+@media (hover: none), (pointer: coarse) {
+  .scroll-indicator { display: none !important; }
+}
 .scroll-indicator-label {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 500;

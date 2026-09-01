@@ -89,52 +89,54 @@ function downloadCV() {
 }
 function downloadPDF() { showToast('Portfolio PDF coming soon — file not yet uploaded'); }
 
-/* ── Custom Cursor ───────────────────────────────────────────── */
-const dot  = document.createElement('div');
-const ring = document.createElement('div');
-dot.className  = 'cursor-dot';
-ring.className = 'cursor-ring';
-document.body.appendChild(dot);
-document.body.appendChild(ring);
+/* ── Custom Cursor (solo dispositivi con mouse/hover reale) ──── */
+if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+  const dot  = document.createElement('div');
+  const ring = document.createElement('div');
+  dot.className  = 'cursor-dot';
+  ring.className = 'cursor-ring';
+  document.body.appendChild(dot);
+  document.body.appendChild(ring);
 
-let mouseX = 0, mouseY = 0;
-let ringX  = 0, ringY  = 0;
-let rafId;
+  let mouseX = 0, mouseY = 0;
+  let ringX  = 0, ringY  = 0;
+  let rafId;
 
-document.addEventListener('mousemove', e => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-  dot.style.left = mouseX + 'px';
-  dot.style.top  = mouseY + 'px';
-});
+  document.addEventListener('mousemove', e => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    dot.style.left = mouseX + 'px';
+    dot.style.top  = mouseY + 'px';
+  });
 
-function animateRing() {
-  ringX += (mouseX - ringX) * 0.12;
-  ringY += (mouseY - ringY) * 0.12;
-  ring.style.left = ringX + 'px';
-  ring.style.top  = ringY + 'px';
-  rafId = requestAnimationFrame(animateRing);
+  function animateRing() {
+    ringX += (mouseX - ringX) * 0.12;
+    ringY += (mouseY - ringY) * 0.12;
+    ring.style.left = ringX + 'px';
+    ring.style.top  = ringY + 'px';
+    rafId = requestAnimationFrame(animateRing);
+  }
+  animateRing();
+
+  /* Expand ring su elementi interattivi */
+  const hoverTargets = 'a, button, .sw-card, .exp-card, .tag, .copy-btn, .back-to-top, .social-link';
+  document.addEventListener('mouseover', e => {
+    if (e.target.closest(hoverTargets)) ring.classList.add('expanded');
+  });
+  document.addEventListener('mouseout', e => {
+    if (e.target.closest(hoverTargets)) ring.classList.remove('expanded');
+  });
+
+  /* Nascondi cursore quando esce dalla finestra */
+  document.addEventListener('mouseleave', () => {
+    dot.style.opacity  = '0';
+    ring.style.opacity = '0';
+  });
+  document.addEventListener('mouseenter', () => {
+    dot.style.opacity  = '1';
+    ring.style.opacity = '1';
+  });
 }
-animateRing();
-
-/* Expand ring su elementi interattivi */
-const hoverTargets = 'a, button, .sw-card, .exp-card, .tag, .copy-btn, .back-to-top, .social-link';
-document.addEventListener('mouseover', e => {
-  if (e.target.closest(hoverTargets)) ring.classList.add('expanded');
-});
-document.addEventListener('mouseout', e => {
-  if (e.target.closest(hoverTargets)) ring.classList.remove('expanded');
-});
-
-/* Nascondi cursore quando esce dalla finestra */
-document.addEventListener('mouseleave', () => {
-  dot.style.opacity  = '0';
-  ring.style.opacity = '0';
-});
-document.addEventListener('mouseenter', () => {
-  dot.style.opacity  = '1';
-  ring.style.opacity = '1';
-});
 
 /* ── Scroll Indicator ────────────────────────────────────────── */
 const scrollIndicator = document.getElementById('scrollIndicator');
